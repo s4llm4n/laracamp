@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserControlleryh;
 use App\Http\Controllers\User\CheckoutController;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,14 +23,16 @@ Route::get('/', function () {
 
 Route::get('checkout/success', [CheckoutController::class, 'success'])->name('checkout.success');
 Route::get('checkout/{camps:slug}', [CheckoutController::class, 'create'])->name('checkout.create');
+Route::post('checkout/{camps}', [CheckoutController::class, 'store'])->name('checkout.store');
 
 // socialite routes
 Route::get('sign-in-google', [UserControlleryh::class, 'google'])->name('user.login.google');
 Route::get('auth/google/callback', [UserControlleryh::class, 'handleProviderCallback'])->name('user.google.callback');
 
+Route::get('dashboard', [HomeController::class, 'dashboard'])->name('dashboard');
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth'])->name('dashboard');
 
 require __DIR__ . '/auth.php';
