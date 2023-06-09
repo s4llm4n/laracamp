@@ -23,7 +23,7 @@
                         </td>
                         <td>
                             <p class="mb-2">
-                                <strong>{{$checkouts->camps->title}}</strong>
+                                <strong>{{$checkouts->Camps->title}}</strong>
                             </p>
                             <p>
                                 September 24, 2021
