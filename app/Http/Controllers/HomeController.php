@@ -10,7 +10,7 @@ class HomeController extends Controller
 {
     public function dashboard()
     {
-        $checkouts = Checkout::with('Camps')->where(Auth::id())->get();
+        $checkouts = Checkout::with('Camps')->whereUserId(Auth::id())->get();
         return view('user.dashboard', [
             'checkouts' => $checkouts
         ]);

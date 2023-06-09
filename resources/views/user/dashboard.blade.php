@@ -16,14 +16,14 @@
         <div class="row my-5">
             <table class="table">
                 <tbody>
-                    @forelse ($checkouts as $checkout)
+                    @forelse ($checkouts as $checkouts)
                     <tr class="align-middle">
                         <td width="18%">
                             <img src="{{asset('images/item_bootcamp.png')}}" height="120" alt="">
                         </td>
                         <td>
                             <p class="mb-2">
-                                <strong>{{$checkout->Camps->title}}</strong>
+                                <strong>{{$checkouts->camps->title}}</strong>
                             </p>
                             <p>
                                 September 24, 2021
