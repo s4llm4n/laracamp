@@ -23,21 +23,25 @@
                         </td>
                         <td>
                             <p class="mb-2">
-                                <strong>{{$checkouts->Camps->title}}</strong>
+                                <strong>{{$checkouts->camps->title}}</strong>
                             </p>
                             <p>
-                                September 24, 2021
+                                {{$checkouts->created_at->format('M d, Y')}}
                             </p>
                         </td>
                         <td>
-                            <strong>$280,000</strong>
+                            <strong>{{$checkouts->camps->price}}</strong>
                         </td>
                         <td>
+                            @if ($checkouts->is_paid)
+                                <strong class="text-success">Payment Success</strong>
+                            @else
                             <strong>Waiting for Payment</strong>
+                            @endif
                         </td>
                         <td>
-                            <a href="#" class="btn btn-primary">
-                                Get Invoice
+                            <a href="https://wa.me/0859385565384?text=Hi, Saya ingin bertanya tentang kelas {{$checkouts->camps->title}}" class="btn btn-primary">
+                                Contact Support
                             </a>
                         </td>
                     </tr>
