@@ -27,6 +27,9 @@ class CheckoutController extends Controller
      */
     public function create(Camps $camps)
     {
+        if ($camps->isRegistered) {
+            $request->session()->flash('error', "You Already registered on {$camps->title} camp.");
+        }
         return view('checkout.create', [
             'camps' => $camps
         ]);
