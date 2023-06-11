@@ -1,5 +1,4 @@
 @component('mail::message')
-#Register Camp: {{$checkout->Camp->title}}
 
 Hi {{$checkout->User->name}}
 <br>
