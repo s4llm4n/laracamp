@@ -1,6 +1,7 @@
 @component('mail::message')
+# Welcome to Bootcamp {{$checkout->User->title ?? ''}}
 
-Hi {{$checkout->User->name}}
+Hi {{$checkout->User->name ?? ''}}
 <br>
 Thank You for register, please see payment instruction by click the button below.
 

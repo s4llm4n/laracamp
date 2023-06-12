@@ -24,7 +24,7 @@
                             <tbody>
                                 @forelse ($checkouts as $checkout)
                                     <tr>
-                                        <td>{{$checkout->User->name}}</td>
+                                        <td>{{$checkout->user->name ?? ''}}</td>
                                         <td>{{$checkout->camps->title ?? ''}}</td>
                                         <td>{{$checkout->camps->price ?? ''}}</td>
                                         <td>{{$checkout->created_at->format('M d Y')}}</td>
