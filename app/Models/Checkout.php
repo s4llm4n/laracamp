@@ -36,6 +36,6 @@ class Checkout extends Model
      */
     public function User(): BelongsTo
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, 'id');
     }
 }
